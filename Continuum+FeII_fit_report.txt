@@ -1,0 +1,39 @@
+[[Model]]
+    ((Model(template_model, prefix='FeIIMgII_VW01_', templ_disp='[2199.8947104 2200.376676  2200.8586416 ... 3088.1573112 3088.6392768
+ 3089.1212424]', templ_fluxden='[0. 0. 0. ... 0. 0. 0.]', templ_disp_unit_str='Angstrom', templ_fluxden_unit_str='erg.Angstrom-1.s-1.cm-2') + Model(power_law_at_2500_plus_bc, prefix='PLBC_')) + Model(template_model, prefix='FeIIUV_VW01_', templ_disp='[1199.8160904 1200.298056  1200.7800216 ... 2198.4488136 2198.9307792
+ 2199.4127448]', templ_fluxden='[0. 0. 0. ... 0. 0. 0.]', templ_disp_unit_str='Angstrom', templ_fluxden_unit_str='erg.Angstrom-1.s-1.cm-2'))
+[[Fit Statistics]]
+    # fitting method   = leastsq
+    # function evals   = 7
+    # data points      = 2046
+    # variables        = 5
+    chi-square         = 1.2861e+09
+    reduced chi-square = 630114.769
+    Akaike info crit   = 27326.5766
+    Bayesian info crit = 27354.6948
+[[Variables]]
+    FeIIMgII_VW01_amp:        3.3401e+13 +/- 1.6002e+12 (4.79%) (init = 3.340132e+13)
+    FeIIMgII_VW01_z:          5.770987 (fixed)
+    FeIIMgII_VW01_fwhm:       2901.966 (fixed)
+    FeIIMgII_VW01_intr_fwhm:  900 (fixed)
+    PLBC_amp:                 0.88647573 +/- 0.02177696 (2.46%) (init = 0.8864757)
+    PLBC_slope:              -1.87365576 +/- 0.06529972 (3.49%) (init = -1.873656)
+    PLBC_z:                   5.783 (fixed)
+    PLBC_amp_be:              0.26339799 +/- 0.02498438 (9.49%) (init = 0.263398)
+    PLBC_Te:                  15000 (fixed)
+    PLBC_tau_be:              1 (fixed)
+    PLBC_lambda_be:           3646 (fixed)
+    FeIIUV_VW01_z:            5.750922 (fixed)
+    FeIIUV_VW01_fwhm:         3706.902 (fixed)
+    FeIIUV_VW01_amp:          1.2127e+14 +/- 2.4611e+13 (20.29%) (init = 1.212675e+14)
+    FeIIUV_VW01_intr_fwhm:    900 (fixed)
+[[Correlations]] (unreported correlations are < 0.100)
+    C(PLBC_amp, PLBC_amp_be)          = -0.982
+    C(PLBC_amp, PLBC_slope)           = 0.975
+    C(PLBC_slope, PLBC_amp_be)        = -0.957
+    C(PLBC_slope, FeIIUV_VW01_amp)    = 0.621
+    C(PLBC_amp_be, FeIIUV_VW01_amp)   = -0.497
+    C(PLBC_amp, FeIIUV_VW01_amp)      = 0.488
+    C(FeIIMgII_VW01_amp, PLBC_amp)    = -0.344
+    C(FeIIMgII_VW01_amp, PLBC_slope)  = -0.340
+    C(FeIIMgII_VW01_amp, PLBC_amp_be) = 0.170

@@ -1,0 +1,20 @@
+[[Model]]
+    Model(line_model_gaussian, prefix='MgII_B_')
+[[Fit Statistics]]
+    # fitting method   = leastsq
+    # function evals   = 5
+    # data points      = 205
+    # variables        = 3
+    chi-square         = 61330626.8
+    reduced chi-square = 303616.964
+    Akaike info crit   = 2590.79988
+    Bayesian info crit = 2600.76891
+[[Variables]]
+    MgII_B_z:          5.77098644 +/- 0.00107260 (0.02%) (init = 5.770986)
+    MgII_B_flux:       157.980326 +/- 5.17554110 (3.28%) (init = 157.9797)
+    MgII_B_cen:        2798.75 (fixed)
+    MgII_B_fwhm_km_s:  2901.91333 +/- 101.896840 (3.51%) (init = 2901.9)
+[[Correlations]] (unreported correlations are < 0.100)
+    C(MgII_B_flux, MgII_B_fwhm_km_s) = 0.911
+    C(MgII_B_z, MgII_B_flux)         = 0.651
+    C(MgII_B_z, MgII_B_fwhm_km_s)    = 0.649

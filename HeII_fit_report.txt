@@ -1,0 +1,19 @@
+[[Model]]
+    Model(line_model_gaussian, prefix='HeII_')
+[[Fit Statistics]]
+    # fitting method   = leastsq
+    # function evals   = 5
+    # data points      = 75
+    # variables        = 3
+    chi-square         = 2981341.75
+    reduced chi-square = 41407.5243
+    Akaike info crit   = 800.279692
+    Bayesian info crit = 807.232156
+[[Variables]]
+    HeII_z:          5.74226056 +/- 0.00215387 (0.04%) (init = 5.742261)
+    HeII_flux:       12.7102007 +/- 1.24221609 (9.77%) (init = 12.7102)
+    HeII_cen:        1640.42 (fixed)
+    HeII_fwhm_km_s:  2018.55654 +/- 217.308171 (10.77%) (init = 2018.557)
+[[Correlations]] (unreported correlations are < 0.100)
+    C(HeII_flux, HeII_fwhm_km_s) = 0.342
+    C(HeII_z, HeII_flux)         = 0.210

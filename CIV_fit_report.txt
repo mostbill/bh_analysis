@@ -1,0 +1,35 @@
+[[Model]]
+    (Model(line_model_gaussian, prefix='CIV_B_') + Model(line_model_gaussian, prefix='CIV_A_'))
+[[Fit Statistics]]
+    # fitting method   = leastsq
+    # function evals   = 8
+    # data points      = 222
+    # variables        = 6
+    chi-square         = 7143372.26
+    reduced chi-square = 33071.1679
+    Akaike info crit   = 2316.14203
+    Bayesian info crit = 2336.55809
+[[Variables]]
+    CIV_B_z:          5.75092214 +/- 7.5497e-04 (0.01%) (init = 5.750922)
+    CIV_B_flux:       170.741262 +/- 3.02650171 (1.77%) (init = 170.7413)
+    CIV_B_cen:        1549.1 (fixed)
+    CIV_B_fwhm_km_s:  3706.88662 +/- 63.1316526 (1.70%) (init = 3706.887)
+    CIV_A_z:          5.68586416 +/- 0.00178484 (0.03%) (init = 5.685864)
+    CIV_A_flux:       23.5294783 +/- 3.16805923 (13.46%) (init = 23.52948)
+    CIV_A_cen:        1549.1 (fixed)
+    CIV_A_fwhm_km_s:  1697.45185 +/- 195.186578 (11.50%) (init = 1697.452)
+[[Correlations]] (unreported correlations are < 0.100)
+    C(CIV_B_flux, CIV_B_fwhm_km_s)      = 0.862
+    C(CIV_B_z, CIV_B_flux)              = -0.858
+    C(CIV_B_z, CIV_B_fwhm_km_s)         = -0.802
+    C(CIV_B_z, CIV_A_flux)              = 0.747
+    C(CIV_B_flux, CIV_A_flux)           = -0.742
+    C(CIV_B_fwhm_km_s, CIV_A_flux)      = -0.705
+    C(CIV_A_flux, CIV_A_fwhm_km_s)      = 0.678
+    C(CIV_B_z, CIV_A_fwhm_km_s)         = 0.549
+    C(CIV_B_flux, CIV_A_fwhm_km_s)      = -0.546
+    C(CIV_B_fwhm_km_s, CIV_A_fwhm_km_s) = -0.464
+    C(CIV_B_z, CIV_A_z)                 = 0.446
+    C(CIV_B_flux, CIV_A_z)              = -0.438
+    C(CIV_B_fwhm_km_s, CIV_A_z)         = -0.386
+    C(CIV_A_z, CIV_A_flux)              = 0.206

@@ -1,0 +1,61 @@
+[[Model]]
+    ((Model(line_model_gaussian, prefix='CIII_') + Model(line_model_gaussian, prefix='AlIII_')) + Model(line_model_gaussian, prefix='SiIII_'))
+[[Fit Statistics]]
+    # fitting method   = leastsq
+    # function evals   = 20
+    # data points      = 607
+    # variables        = 9
+    chi-square         = 30707037.4
+    reduced chi-square = 51349.5608
+    Akaike info crit   = 6592.70449
+    Bayesian info crit = 6632.38125
+[[Variables]]
+    CIII_z:           5.76840528 +/- 0.16737725 (2.90%) (init = 5.768405)
+    CIII_flux:        218.629554 +/- 966.870074 (442.24%) (init = 218.6296)
+    CIII_cen:         1908.7 (fixed)
+    CIII_fwhm_km_s:   6413.22723 +/- 3480.62437 (54.27%) (init = 6413.227)
+    AlIII_z:          5.77430842 +/- 0.01036086 (0.18%) (init = 5.774308)
+    AlIII_flux:       68.2037058 +/- 19.4108465 (28.46%) (init = 68.20371)
+    AlIII_cen:        1857.4 (fixed)
+    AlIII_fwhm_km_s:  4525.29915 +/- 413.615091 (9.14%) (init = 4525.299)
+    SiIII_z:          5.77530900 +/- 0.24959917 (4.32%) (init = 5.775309)
+    SiIII_flux:       56.5594809 +/- 981.724775 (1735.74%) (init = 56.55948)
+    SiIII_cen:        1892 (fixed)
+    SiIII_fwhm_km_s:  5680.27758 +/- 10075.8042 (177.38%) (init = 5680.278)
+[[Correlations]] (unreported correlations are < 0.100)
+    C(CIII_flux, SiIII_flux)            = -1.000
+    C(CIII_z, CIII_flux)                = -0.999
+    C(CIII_z, SiIII_flux)               = 0.999
+    C(CIII_z, CIII_fwhm_km_s)           = -0.998
+    C(CIII_flux, SiIII_z)               = -0.997
+    C(SiIII_z, SiIII_flux)              = 0.997
+    C(CIII_z, SiIII_z)                  = 0.996
+    C(CIII_flux, CIII_fwhm_km_s)        = 0.995
+    C(CIII_fwhm_km_s, SiIII_flux)       = -0.994
+    C(AlIII_z, AlIII_flux)              = 0.990
+    C(CIII_fwhm_km_s, SiIII_z)          = -0.989
+    C(SiIII_flux, SiIII_fwhm_km_s)      = 0.981
+    C(CIII_flux, SiIII_fwhm_km_s)       = -0.978
+    C(SiIII_z, SiIII_fwhm_km_s)         = 0.977
+    C(CIII_z, SiIII_fwhm_km_s)          = 0.972
+    C(CIII_fwhm_km_s, SiIII_fwhm_km_s)  = -0.957
+    C(AlIII_z, AlIII_fwhm_km_s)         = 0.956
+    C(AlIII_flux, AlIII_fwhm_km_s)      = 0.935
+    C(AlIII_flux, SiIII_fwhm_km_s)      = -0.840
+    C(AlIII_z, SiIII_fwhm_km_s)         = -0.794
+    C(AlIII_flux, SiIII_flux)           = -0.740
+    C(CIII_flux, AlIII_flux)            = 0.729
+    C(AlIII_flux, SiIII_z)              = -0.714
+    C(CIII_z, AlIII_flux)               = -0.713
+    C(AlIII_fwhm_km_s, SiIII_fwhm_km_s) = -0.692
+    C(AlIII_z, SiIII_flux)              = -0.691
+    C(CIII_fwhm_km_s, AlIII_flux)       = 0.684
+    C(CIII_flux, AlIII_z)               = 0.680
+    C(CIII_z, AlIII_z)                  = -0.664
+    C(AlIII_z, SiIII_z)                 = -0.662
+    C(CIII_fwhm_km_s, AlIII_z)          = 0.636
+    C(AlIII_fwhm_km_s, SiIII_flux)      = -0.592
+    C(CIII_flux, AlIII_fwhm_km_s)       = 0.580
+    C(CIII_z, AlIII_fwhm_km_s)          = -0.565
+    C(AlIII_fwhm_km_s, SiIII_z)         = -0.560
+    C(CIII_fwhm_km_s, AlIII_fwhm_km_s)  = 0.539
