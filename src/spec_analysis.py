@@ -26,9 +26,9 @@ def print_fit_report(fit):
             filename = f"{element.name}_fit_report.txt"
             with open(filename, 'w') as file:
                 file.write(str(element.fit_result.fit_report()))
-            print("Fit report of {0} saved to {1}".format(element.name, filename))
+            print("[INFO]Fit report of {0} saved to {1}".format(element.name, filename))
         else:
-            print("Object does not have a 'name' attribute.")
+            print("[WARNING]Object does not have a 'name' attribute.")
 
 def analyze_line_profile(line_fit):
     '''
@@ -70,10 +70,28 @@ def analyze_line_profile(line_fit):
     # civ_fwhm = scana.get_fwhm(civ_spec, resolution=600)
     # print('CIV FWHM (accounting for spectral resolution): {:.2f}'.format(civ_fwhm))
 
-def analyze_continuum(redshift, wavelength, cont_fit):
+def analyze_continuum(fit, cont_wave=4400):
     '''
     Analyze continuum with given wavelength (where at you want to analyze on the continuum) and the source's redshift
     '''
+
+    dispersion = np.linspace(0, 100000, 1000000)
+
+    # Use the continuum analysis function
+    cont_result = scana.analyze_continuum(fit, ['PLBC_'],
+                                        [cont_wave],
+                                        cosmo, redshift=fit.redshift, width=10, dispersion=dispersion)
+
+    # Print the results from the dictionary
+    filename = f"Continuum_{cont_wave}AA.txt"
+    with open(filename, 'w') as file:
+        for key in cont_result.keys():
+            result_string = '{} = {:.2e}'.format(key, cont_result[key])
+            file.write(result_string + '\n')
+
+        
+    print("[INFO]Continuum analysis at {0} is done and saved into {1}".format(cont_wave, filename))
+    
     return 0
 
 def main():
@@ -90,6 +108,7 @@ def main():
     fit_folder = args.fit
     
     # Define Cosmology for cosmological conversions
+    global cosmo
     cosmo = FlatLambdaCDM(H0=70, Om0=0.3)
 
     # Instantiate an empty SpecFit object
@@ -99,7 +118,10 @@ def main():
     
     print_fit_report(fit.specmodels)
     
-    analyze_line_profile(fit)
+    # needs import to assign the profile names
+    #analyze_line_profile(fit)
+    analyze_continuum(fit, cont_wave=4400)
+    
 
     # for idx, specmodel in enumerate(fit.specmodels):
     #     print(idx, specmodel.name)

@@ -1,0 +1,4 @@
+4400_fluxden_avg = 3.07e-18 erg / (Angstrom cm2 s)
+4400_Lwav = 7.63e+42 erg / (Angstrom s)
+4400_appmag = 1.90e+01 mag
+4400_absmag = -2.76e+01 mag

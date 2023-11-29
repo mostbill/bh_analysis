@@ -35,13 +35,20 @@ def plot_and_save_spectrum(frequency, flux, survey, predict, output_filename='ra
     # Fit a curve
     def fitted_curve(x, a, b):
         return b * x**a
+    def fitted_given_slope(x, b):
+        return b * x**slope_value
 
-    params, covariance = curve_fit(fitted_curve, frequency, flux)
-    a, b = params
 
     # Plot the fitted curve
     x_fit = np.linspace(np.minimum(np.min(frequency), predict[0]), np.maximum(np.max(frequency), [predict[0]]), 100)
-    y_fit = fitted_curve(x_fit, a, b)
+    if slope_value!='None':
+        params, covariance = curve_fit(fitted_given_slope, frequency, flux)
+        b = params
+        y_fit = fitted_given_slope(x_fit, b)
+    else:
+        params, covariance = curve_fit(fitted_curve, frequency, flux)
+        a, b = params
+        y_fit = fitted_curve(x_fit, a, b)
     plt.plot(x_fit, y_fit, label='{:.2f}*x**{:.2f}'.format(b,a), color='red')
 
     # Set plot parameters and save the figure
@@ -73,7 +80,19 @@ def calc_pred_flux(frequency, flux, survey, f_pred, slope=None):
     # flux = np.array(flux)
 
     # If slope is not provided, perform linear regression to find it
-    if len(flux)>1:
+    # if slope_value!='None':
+    #     def power_law(x, a, b):
+    #         return b * x**a
+
+    #     # Perform the curve fit
+    #     params, _ = curve_fit(power_law, frequency, flux)
+    #     a, b = params
+    # else:
+    #     # Use the provided slope value
+    #     b = flux[0] / frequency[0]**slope
+    #     a = slope
+
+    if slope_value=='None':
         def power_law(x, a, b):
             return b * x**a
 
@@ -84,7 +103,6 @@ def calc_pred_flux(frequency, flux, survey, f_pred, slope=None):
         # Use the provided slope value
         b = flux[0] / frequency[0]**slope
         a = slope
-        
 
     # Predict flux at x = 10 using the fitted parameters
     x_predict = f_pred
@@ -104,6 +122,7 @@ def main():
     values = user_input.split()
     redshift=float(values[0])
     f_pred=float(values[1])
+    global slope_value
     slope_value=values[2]
     if slope_value!='None':
         slope_value=float(values[2])
